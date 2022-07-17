@@ -10,6 +10,7 @@ public class Birthday_Gift {
                     break;
                 }
                 if(a == b || b % a == 0){
+
                     return "YES";
                 }else{
                     a = a + c;
@@ -21,7 +22,8 @@ public class Birthday_Gift {
                     if(c == 0 && a != b){
                         break;
                     }
-                    if(a == b){
+                    if(a == b || b % a == 0){
+
                         return "YES";
                     }else{
                         a = a + c;
@@ -32,7 +34,8 @@ public class Birthday_Gift {
                     if(c == 0 && a != b){
                         break;
                     }
-                    if(a == b){
+                    if(a == b || b % a == 0){
+
                         return "YES";
                     }else{
                         a = a + c;
@@ -40,6 +43,7 @@ public class Birthday_Gift {
                 }
             }
         }
+
         return "NO";
     }
 
