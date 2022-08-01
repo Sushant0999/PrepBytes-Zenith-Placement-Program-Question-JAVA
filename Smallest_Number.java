@@ -17,7 +17,7 @@ public class Smallest_Number {
     }
 
     private static int smallest(int size, int[] arr, int min) {
-        if(arr.length == 0){
+        if (arr.length == 0) {
             return -1;
         }
         HashMap<Integer, Integer> hash = new HashMap<>();
@@ -37,4 +37,27 @@ public class Smallest_Number {
         }
         return -1;
     }
+    //Another Approach
+
+    /*public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), count = 0;
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+        int k = s.nextInt();
+        Arrays.sort(arr);
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+            if (count == k) {
+                System.out.println(arr[i]);
+                break;
+            }
+        }
+    }*/
 }
