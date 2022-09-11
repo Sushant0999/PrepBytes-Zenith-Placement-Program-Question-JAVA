@@ -43,6 +43,7 @@ public class Interesting_Array {
     }
 
     private static int check(int x, int[] arr, int n) {
+        //Using Linear Search
 //        for (int i = 0; i < n; i++) {
 //            if (arr[i] == x) {
 //                return i;
@@ -51,6 +52,7 @@ public class Interesting_Array {
 //                break;
 //            }
 //        }
+        //Using Binary Search 
         int front = 0;
         int last = n;
         while (front <= last){
