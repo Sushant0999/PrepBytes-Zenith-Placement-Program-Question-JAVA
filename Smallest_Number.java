@@ -1,7 +1,9 @@
 package com.company;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Smallest_Number {
@@ -12,32 +14,27 @@ public class Smallest_Number {
         for (int i = 0; i < size; i++) {
             arr[i] = s.nextInt();
         }
-        int min = s.nextInt();
-        System.out.println(smallest(size, arr, min));
+        int k = s.nextInt();
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(smallest(size, arr, k));
     }
 
+    //Optimal Approach
     private static int smallest(int size, int[] arr, int min) {
-        if (arr.length == 0) {
-            return -1;
-        }
-        HashMap<Integer, Integer> hash = new HashMap<>();
-        for (int i = 0; i < size; i++) {
-            if (hash.containsKey(arr[i])) {
-                hash.put(arr[i], hash.get(arr[i]) + 1);
-            } else {
-                hash.put(arr[i], 1);
+        HashSet<Integer> set = new HashSet<>();
+        int count = 1;
+        for(int i = 0; i < size; i++){
+            if(set.contains(arr[i])){
+                count++;
+            }if(count == min){
+                return arr[i];
             }
-        }
-        for (int i = 0; i < hash.size(); i++) {
-            if (hash.containsKey(i)) {
-                if (hash.containsValue(min)) {
-                    return i;
-                }
-            }
+            set.add(arr[i]);
         }
         return -1;
     }
-    //Another Approach
+    //BruteForce Approach
 
     /*public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
